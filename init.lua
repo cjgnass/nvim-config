@@ -50,32 +50,32 @@ require("lazy").setup({
             })
         end,
     },
-    -- {
-    --     "nvim-treesitter/nvim-treesitter",
-    --     lazy = false,
-    --     build = ":TSUpdate",
-    --     config = function()
-    --         require("nvim-treesitter.configs").setup({
-    --             ensure_installed = {
-    --                 "lua",
-    --                 "vim",
-    --                 "query",
-    --                 "c",
-    --                 "cpp",
-    --                 "typescript",
-    --                 "javascript",
-    --                 "tsx",
-    --                 "jsx",
-    --                 "python",
-    --                 "rust",
-    --                 "go",
-    --                 "java",
-    --             },
-    --             highlight = { enable = true },
-    --             indent = { enable = true },
-    --         })
-    --     end,
-    -- },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
+        -- config = function()
+        --     require("nvim-treesitter.configs").setup({
+        --         ensure_installed = {
+        --             "lua",
+        --             "vim",
+        --             "query",
+        --             "c",
+        --             "cpp",
+        --             "typescript",
+        --             "javascript",
+        --             "tsx",
+        --             "jsx",
+        --             "python",
+        --             "rust",
+        --             "go",
+        --             "java",
+        --         },
+        --         highlight = { enable = true },
+        --         indent = { enable = true },
+        --     })
+        -- end,
+    },
 
     {
         "saghen/blink.cmp",
@@ -221,9 +221,9 @@ require("lazy").setup({
         "kevinhwang91/nvim-ufo",
         dependencies = "kevinhwang91/promise-async",
         keys = {
-            { "<leader>fo", function() require("ufo").openAllFolds() end,  desc = "Open all folds" },
-            { "<leader>fc", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
-            { "<leader>ft", "za",                                          desc = "Toggle fold" },
+            { "zo", function() require("ufo").openAllFolds() end,  desc = "Open all folds" },
+            { "zc", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },
+            { "zt", "za",                                          desc = "Toggle fold" },
         },
         event = "BufReadPost", -- Load when you open a file
         init = function()
