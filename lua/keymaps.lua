@@ -13,6 +13,8 @@ vim.keymap.set("n", "<leader>ff", function()
 end, { desc = "Format file" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle Neo-tree' })
+
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP Go to Definition" })
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP References" })
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "LSP Implementation" })

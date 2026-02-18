@@ -42,6 +42,8 @@ require("lazy").setup({
                     typescript = { { "prettierd", "prettier" } },
                     typescriptreact = { { "prettierd", "prettier" } },
                     go = { "gofmt" },
+                    python = { { "isort", "black" } },
+                    csharp = { "csharpier" }
                 },
                 format_on_save = {
                     timeout_ms = 500,
@@ -50,33 +52,6 @@ require("lazy").setup({
             })
         end,
     },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        lazy = false,
-        build = ":TSUpdate",
-        -- config = function()
-        --     require("nvim-treesitter.configs").setup({
-        --         ensure_installed = {
-        --             "lua",
-        --             "vim",
-        --             "query",
-        --             "c",
-        --             "cpp",
-        --             "typescript",
-        --             "javascript",
-        --             "tsx",
-        --             "jsx",
-        --             "python",
-        --             "rust",
-        --             "go",
-        --             "java",
-        --         },
-        --         highlight = { enable = true },
-        --         indent = { enable = true },
-        --     })
-        -- end,
-    },
-
     {
         "saghen/blink.cmp",
         dependencies = { "rafamadriz/friendly-snippets" },
@@ -242,6 +217,16 @@ require("lazy").setup({
             })
         end,
     },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons", -- optional, but recommended
+        },
+        lazy = false,                      -- neo-tree will lazily load itself
+    }
 })
 
 vim.cmd.colorscheme("tokyodark")
