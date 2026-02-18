@@ -28,7 +28,9 @@ require("lazy").setup({
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         dependencies = { "williamboman/mason.nvim" },
         config = function()
-            require("mason-tool-installer").setup({})
+            require("mason-tool-installer").setup({
+                ensure_installed = { "isort", "black" },
+            })
         end,
     },
     {
@@ -42,7 +44,7 @@ require("lazy").setup({
                     typescript = { { "prettierd", "prettier" } },
                     typescriptreact = { { "prettierd", "prettier" } },
                     go = { "gofmt" },
-                    python = { { "isort", "black" } },
+                    python = { "isort", "black" },
                     csharp = { "csharpier" }
                 },
                 format_on_save = {
