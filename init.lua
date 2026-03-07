@@ -17,6 +17,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     "NMAC427/guess-indent.nvim",
     { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
+    {
+        "lervag/vimtex",
+        lazy = false, -- we don't want to lazy load VimTeX
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+        init = function()
+            -- VimTeX configuration goes here, e.g.
+            vim.g.vimtex_view_method = "sioyek"
+            vim.g.vimtex_compiler_method = 'latexmk'
+        end
+    },
     { "tiagovla/tokyodark.nvim", name = "tokyodark",  priority = 1000 },
     {
         "williamboman/mason.nvim",
