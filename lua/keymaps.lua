@@ -107,3 +107,13 @@ local function toggle()
     end
 end
 vim.keymap.set("n", "<leader>z", toggle, { desc = "Toggle cursor centering" })
+
+local diag_win = nil
+vim.keymap.set("n", "<leader>d", function()
+    if diag_win and vim.api.nvim_win_is_valid(diag_win) then
+        vim.api.nvim_win_close(diag_win, true)
+        diag_win = nil
+    else
+        _, diag_win = vim.diagnostic.open_float()
+    end
+end, { desc = "Toggle diagnostic float" })
